@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'books/new'
-  post 'books' => 'books#create'
-  get 'books/index'
-  get 'books/show'
-  get 'books/edit'
-  get '/top' => 'homes#top'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+ resources :books
+ delete 'books/:id' => 'books#destroy', as: 'destroy_book'
+ root to: 'homes#top'
+  # For det  delete 'lists/:id' => 'lists#destroy', as: 'destroy_list'ails on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
